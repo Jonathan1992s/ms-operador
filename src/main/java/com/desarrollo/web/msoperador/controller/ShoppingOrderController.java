@@ -29,7 +29,7 @@ public class ShoppingOrderController {
 
             return ResponseEntity.status(HttpStatus.OK).body(shoppingOrder);
         }else {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
