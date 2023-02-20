@@ -15,7 +15,13 @@ import java.util.List;
 public class ShoppingOrderController {
 
     private final ShoppingOrderService service;
-
+   
+    @GetMapping(path = "/")
+    public ResponseEntity<String> healthy(
+          ){
+        return ResponseEntity.ok("OK");
+    }
+    
     @GetMapping(path = "/orders/{client}")
     public ResponseEntity<List<ShoppingOrder>> saveShoppingOrder(@PathVariable(name = "client") String client){
         List<ShoppingOrder> shoppingOrder = service.findShoppingOrderByClient(client);
