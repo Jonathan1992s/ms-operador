@@ -38,6 +38,7 @@ public class ShoppingOrderServiceImpl implements ShoppingOrderService {
             List<ProductOrder> products = new ArrayList<ProductOrder>(){};
             for (CreateProductOrder productOrder: request.getProducts()) {
                 Product filterProduct = productsFacade.getProduct(productOrder.getId());
+
                 if (filterProduct !=null){
                     products.add(
                             new ProductOrder(

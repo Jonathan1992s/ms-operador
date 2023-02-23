@@ -23,11 +23,10 @@ public class ProductsFacade {
     public Product getProduct(String id){
         try {
             return restTemplate.getForObject(
-                    String.format(getProductUrl+ id),
+                    String.format(getProductUrl, id),
                     Product.class);
         }catch (HttpClientErrorException e){
             log.error("Client Error: {}, Product with ID {}", e.getStatusCode(), id);
-            
             return null;
         }
 
